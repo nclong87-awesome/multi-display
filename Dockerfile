@@ -1,8 +1,8 @@
 FROM ubuntu:18.04
 
 ENV DEBIAN_FRONTEND=noninteractive \
-    NOVNC_SHA="b403cb92fb8de82d04f305b4f14fa978003890d7" \
-    WEBSOCKIFY_SHA="558a6439f14b0d85a31145541745e25c255d576b" \
+    NOVNC_SHA="v1.3.0" \
+    WEBSOCKIFY_SHA="v0.10.0" \
     LOG_PATH=/var/log/supervisor
 
 RUN apt-get -qqy update && apt-get -qqy --no-install-recommends install \
