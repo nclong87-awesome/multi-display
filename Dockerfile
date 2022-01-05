@@ -30,7 +30,7 @@ RUN  wget -nv -O noVNC.zip "https://github.com/novnc/noVNC/archive/refs/tags/v1.
  && unzip -x websockify.zip \
  && mv websockify-${WEBSOCKIFY_SHA} ./noVNC/utils/websockify \
  && rm websockify.zip noVNC.zip \
- && ln noVNC/vnc_auto.html noVNC/index.html \
+ && ln noVNC/vnc_lite.html noVNC/index.html \
  && sed -i "s/<number>4<\/number>/<number>1<\/number>/g" /etc/xdg/openbox/rc.xml
 
 #RUN npm install -g nodemon
