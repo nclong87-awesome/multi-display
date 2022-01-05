@@ -16,17 +16,17 @@ RUN apt-get -qqy update && apt-get -qqy --no-install-recommends install \
     net-tools \
     supervisor \
     chromium-browser
-        
+
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - & \
     apt-get update && apt-get -y install nodejs npm
 
 
 WORKDIR /app
 
-RUN  wget -nv -O noVNC.zip "https://github.com/kanaka/noVNC/archive/${NOVNC_SHA}.zip" \
+RUN  wget -nv -O noVNC.zip "https://github.com/novnc/noVNC/archive/refs/tags/v1.3.0.zip" \
  && unzip -x noVNC.zip \
  && mv noVNC-${NOVNC_SHA} noVNC \
- && wget -nv -O websockify.zip "https://github.com/kanaka/websockify/archive/${WEBSOCKIFY_SHA}.zip" \
+ && wget -nv -O websockify.zip "https://github.com/novnc/websockify/archive/refs/tags/v0.10.0.zip" \
  && unzip -x websockify.zip \
  && mv websockify-${WEBSOCKIFY_SHA} ./noVNC/utils/websockify \
  && rm websockify.zip noVNC.zip \
