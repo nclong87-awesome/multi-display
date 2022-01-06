@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 
 ENV DEBIAN_FRONTEND=noninteractive \
-    NOVNC_SHA="1.3.0" \
+    NOVNC_SHA="1.2.0" \
     WEBSOCKIFY_SHA="0.10.0" \
     LOG_PATH=/var/log/supervisor
 
@@ -23,7 +23,7 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - & \
 
 WORKDIR /app
 
-RUN  wget -nv -O noVNC.zip "https://github.com/novnc/noVNC/archive/refs/tags/v1.3.0.zip" \
+RUN  wget -nv -O noVNC.zip "https://github.com/novnc/noVNC/archive/refs/tags/v1.2.0.zip" \
  && unzip -x noVNC.zip \
  && mv noVNC-${NOVNC_SHA} noVNC \
  && wget -nv -O websockify.zip "https://github.com/novnc/websockify/archive/refs/tags/v0.10.0.zip" \
