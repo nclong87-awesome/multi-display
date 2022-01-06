@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 ENV DEBIAN_FRONTEND=noninteractive \
     NOVNC_SHA="1.2.0" \
-    WEBSOCKIFY_SHA="0.10.0" \
+    WEBSOCKIFY_SHA="dc345815c0c344de115278a37e837ba6a6f1b272" \
     LOG_PATH=/var/log/supervisor
 
 RUN apt-get -qqy update && apt-get -qqy --no-install-recommends install \
@@ -26,7 +26,7 @@ WORKDIR /app
 RUN  wget -nv -O noVNC.zip "https://github.com/novnc/noVNC/archive/refs/tags/v1.2.0.zip" \
  && unzip -x noVNC.zip \
  && mv noVNC-${NOVNC_SHA} noVNC \
- && wget -nv -O websockify.zip "https://github.com/novnc/websockify/archive/refs/tags/v0.10.0.zip" \
+ && wget -nv -O websockify.zip "https://github.com/novnc/websockify/archive/dc345815c0c344de115278a37e837ba6a6f1b272.zip" \
  && unzip -x websockify.zip \
  && mv websockify-${WEBSOCKIFY_SHA} ./noVNC/utils/websockify \
  && rm websockify.zip noVNC.zip \
